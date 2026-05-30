@@ -23,6 +23,21 @@ This is the starter research list for turning public information into tracker re
 | CoreWeave Lancaster Pennsylvania data center | Company announcement | Up to $6B commitment, Lancaster AI data center, initial power signal |
 | CoreWeave / Meta AI infrastructure agreement | Company announcement | $21B expanded AI infrastructure agreement, reference-only commercial capacity signal |
 | Broadcom / Meta MTIA partnership | Company announcement | Multi-GW custom silicon support for Meta MTIA over time |
+| Epoch AI - OpenAI Stargate site report | Independent tracker / satellite and permits | Abilene, Shackelford, Dona Ana, Milam, Port Washington, Saline Township, and Lordstown site-level current/projected GW and H100-equivalent estimates |
+| NVIDIA - Meta AI infrastructure partnership | Company announcement | Multiyear NVIDIA/Meta partnership, millions of Blackwell and Rubin GPUs, on-prem and cloud AI infrastructure |
+
+## Financial Tracker Sources Parsed Into The Page
+
+| Source | Type | Parsed Fields |
+| --- | --- | --- |
+| Microsoft FY2025 Annual Report | Annual report | Revenue, operating income, capex, operating cash flow, free cash flow, cash, debt, AI/cloud infrastructure notes |
+| Alphabet investor materials / filings | Annual/TTM financials | Revenue, operating income, capex, operating cash flow, free cash flow, cash, debt, TPU/cloud infrastructure notes |
+| Amazon annual report / investor materials | Annual/TTM financials | Revenue, operating income, capex, operating cash flow, free cash flow, cash, debt, AWS/Trainium infrastructure notes |
+| Meta FY2025 Form 10-K | Annual report | Revenue, operating income, capex including finance leases, operating cash flow, free cash flow, cash, debt, AI infrastructure notes |
+| NVIDIA FY2026 results | Earnings release / annual financials | Revenue, operating income, capex, operating cash flow, free cash flow, cash, debt, AI platform notes |
+| Broadcom FY2025 results | Earnings release / annual financials | Revenue, operating income, capex, operating cash flow, free cash flow, cash, debt, AI semiconductor notes |
+| Oracle investor materials | Annual/forward infrastructure watch | Revenue, operating income, capex, operating cash flow, free cash flow, cash, debt, OCI/Stargate infrastructure notes |
+| CoreWeave FY2025 results | Earnings release / annual financials | Revenue, operating loss, capex, free cash flow, cash, debt, backlog and GPU cloud notes |
 
 ## Next Sources To Parse
 

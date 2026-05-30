@@ -20,8 +20,9 @@
         <nav class="nav-stack" aria-label="Primary">
           <a class="active" href="#dashboard">Dashboard</a>
           <a href="#assets">Assets</a>
+          <a href="#financials">Financials</a>
           <a href="#regions">Regions</a>
-          <a href="#sources">Sources</a>
+          <a href="#source-register">Sources</a>
         </nav>
 
         <div class="note">
@@ -107,6 +108,114 @@
           </article>
         </section>
 
+        <section class="financials" id="financials">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Capital monitor</p>
+              <h3>AI company financial tracker</h3>
+            </div>
+            <div class="finance-filter">
+              <label>
+                <span>Company type</span>
+                <select id="financeTypeFilter"></select>
+              </label>
+              <span id="financeCount">0 companies</span>
+            </div>
+          </div>
+
+          <section class="metrics finance-metrics" aria-label="Financial summary">
+            <article>
+              <span>Tracked revenue</span>
+              <strong id="metricRevenue">$0B</strong>
+            </article>
+            <article>
+              <span>Capex intensity</span>
+              <strong id="metricCapex">$0B</strong>
+            </article>
+            <article>
+              <span>Free cash flow</span>
+              <strong id="metricFcf">$0B</strong>
+            </article>
+            <article>
+              <span>Net cash / debt</span>
+              <strong id="metricNetCash">$0B</strong>
+            </article>
+          </section>
+
+          <section class="overview-grid">
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Cash engine</p>
+                  <h3>Capex vs free cash flow</h3>
+                </div>
+              </div>
+              <canvas id="capexChart" width="620" height="310" aria-label="Capex and free cash flow chart"></canvas>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Balance sheet</p>
+                  <h3>Cash and debt position</h3>
+                </div>
+              </div>
+              <canvas id="balanceChart" width="520" height="310" aria-label="Cash and debt chart"></canvas>
+            </article>
+          </section>
+
+          <article class="panel segment-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Segment lens</p>
+                <h3>Capex by company type</h3>
+              </div>
+            </div>
+            <div class="segment-list" id="financeSegments"></div>
+          </article>
+
+          <section class="content-grid">
+            <article class="panel table-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Financial records</p>
+                  <h3>AI infrastructure companies</h3>
+                </div>
+                <span>FY or latest annual/TTM data</span>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Type</th>
+                      <th>Period</th>
+                      <th>Revenue</th>
+                      <th>AI / data center signal</th>
+                      <th>Capex</th>
+                      <th>FCF</th>
+                      <th>Debt</th>
+                    </tr>
+                  </thead>
+                  <tbody id="financeRows"></tbody>
+                </table>
+              </div>
+            </article>
+
+            <aside class="panel details-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="eyebrow">Financial detail</p>
+                  <h3 id="financeDetailTitle">Choose a company</h3>
+                </div>
+              </div>
+              <div id="financeDetailBody" class="detail-body">
+                <p>Select a company row to inspect capex, cash flow, debt, and AI spending notes.</p>
+              </div>
+            </aside>
+          </section>
+        </section>
+
         <section class="content-grid" id="assets">
           <article class="panel table-panel">
             <div class="panel-head">
@@ -134,7 +243,7 @@
             </div>
           </article>
 
-          <aside class="panel details-panel" id="sources">
+          <aside class="panel details-panel" id="asset-detail">
             <div class="panel-head">
               <div>
                 <p class="eyebrow">Selected asset</p>
@@ -143,6 +252,46 @@
             </div>
             <div id="detailBody" class="detail-body">
               <p>Select a row to inspect deployment notes, confidence, and source trail.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="source-layout" id="source-register">
+          <article class="panel source-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Evidence register</p>
+                <h3>Sources powering the tracker</h3>
+              </div>
+              <span id="sourceCount">0 sources</span>
+            </div>
+            <div class="source-grid" id="sourceGrid"></div>
+          </article>
+
+          <aside class="panel methodology-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Data rules</p>
+                <h3>How records are counted</h3>
+              </div>
+            </div>
+            <div class="method-list">
+              <div>
+                <strong>Included</strong>
+                <span>Site or platform records that represent capacity without obvious overlap.</span>
+              </div>
+              <div>
+                <strong>Reference only</strong>
+                <span>Supplier deals, overlapping site details, and commercial signals that add context but are excluded from top-line totals.</span>
+              </div>
+              <div>
+                <strong>N/A</strong>
+                <span>Unknown values stay blank instead of being invented.</span>
+              </div>
+              <div>
+                <strong>Confidence</strong>
+                <span>Company announcements and official filings rank higher than trackers, trade press, or inferred estimates.</span>
+              </div>
             </div>
           </aside>
         </section>
