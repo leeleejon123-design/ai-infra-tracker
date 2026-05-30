@@ -322,6 +322,14 @@ td {
   font-size: 0.9rem;
 }
 
+.row-subtitle {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
 th {
   color: var(--muted);
   font-size: 0.75rem;
