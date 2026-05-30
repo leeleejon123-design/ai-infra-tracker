@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Infrastructure Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Tracker navigation">
+        <div class="brand">
+          <div class="brand-mark">AI</div>
+          <div>
+            <p class="eyebrow">Scenario desk</p>
+            <h1>AI Infrastructure Tracker</h1>
+          </div>
+        </div>
+
+        <nav class="nav-stack" aria-label="Primary">
+          <a class="active" href="#dashboard">Dashboard</a>
+          <a href="#assets">Assets</a>
+          <a href="#regions">Regions</a>
+          <a href="#sources">Sources</a>
+        </nav>
+
+        <div class="note">
+          <strong>Prototype data</strong>
+          <span>Numbers are sample estimates for product iteration, not verified market intelligence.</span>
+        </div>
+      </aside>
+
+      <main>
+        <section class="topbar" id="dashboard">
+          <div>
+            <p class="eyebrow">Operating view</p>
+            <h2>Global AI compute buildout</h2>
+          </div>
+          <div class="toolbar">
+            <button id="resetFilters" type="button">Reset</button>
+            <button id="exportCsv" class="primary" type="button">Export CSV</button>
+          </div>
+        </section>
+
+        <section class="metrics" aria-label="Infrastructure summary">
+          <article>
+            <span>Total projects</span>
+            <strong id="metricProjects">0</strong>
+          </article>
+          <article>
+            <span>Estimated accelerators</span>
+            <strong id="metricGpus">0</strong>
+          </article>
+          <article>
+            <span>Power capacity</span>
+            <strong id="metricPower">0 MW</strong>
+          </article>
+          <article>
+            <span>Active regions</span>
+            <strong id="metricRegions">0</strong>
+          </article>
+        </section>
+
+        <section class="controls" aria-label="Filters">
+          <label>
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Company, location, provider..." />
+          </label>
+          <label>
+            <span>Company</span>
+            <select id="companyFilter"></select>
+          </label>
+          <label>
+            <span>Region</span>
+            <select id="regionFilter"></select>
+          </label>
+          <label>
+            <span>Status</span>
+            <select id="statusFilter"></select>
+          </label>
+          <label>
+            <span>Chip family</span>
+            <select id="chipFilter"></select>
+          </label>
+        </section>
+
+        <section class="overview-grid">
+          <article class="panel regional-map" id="regions">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Regional heat</p>
+                <h3>Capacity by deployment region</h3>
+              </div>
+              <span id="regionCount">0 regions</span>
+            </div>
+            <div class="map-stage" id="mapStage" aria-label="Regional capacity map"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Compute mix</p>
+                <h3>Accelerators by chip family</h3>
+              </div>
+            </div>
+            <canvas id="chipChart" width="520" height="280" aria-label="Chip family chart"></canvas>
+          </article>
+        </section>
+
+        <section class="content-grid" id="assets">
+          <article class="panel table-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Tracked assets</p>
+                <h3>Infrastructure projects</h3>
+              </div>
+              <span id="resultCount">0 records</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Provider</th>
+                    <th>Chip</th>
+                    <th>Accelerators</th>
+                    <th>Power</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="assetRows"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <aside class="panel details-panel" id="sources">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Selected asset</p>
+                <h3 id="detailTitle">Choose a project</h3>
+              </div>
+            </div>
+            <div id="detailBody" class="detail-body">
+              <p>Select a row to inspect deployment notes, confidence, and source trail.</p>
+            </div>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
